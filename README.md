@@ -7,10 +7,11 @@ Discover social circles and collaborations/influence among O'Reilly tech book au
 ## What to Expect
 <div align="center">
 <img width="400" src="/static/java_outer.png" alt="Search for Java books zoomed out"><br>
-_A search for Java books zoomed out_
+A search for Java books zoomed out<br><br>
 
 <img width="400" src="/static/java_close.png" alt="Search for Java books zoomed in on a specific node"><br>
-_A search for Java books zoomed in on a specific node_
+A search for Java books zoomed in on a specific node<br><br>
+
 </div>
 ## Introduction
 This is a quick weekend/semi-ongoing experiment. Feel free to contribute.<br>
@@ -34,7 +35,7 @@ virtualenv -p `which python3` virtual_environment/
 3. Create a new workspace and start the server from the "Streaming" tab<br>
 <div align="center">
 <img width="200" src="/static/gephi_server.png" alt="Search for Java books zoomed out"><br>
-_Start the server, make sure you know your IP address and the configured port if not running locally._
+Start the server, make sure you know your IP address and the configured port if not running locally.<br><br>
 </div>
 
 #### Hint
@@ -45,7 +46,7 @@ _Right click on "Master Server" and click start, the circular icon needs to be g
 Force Atlas
 <div align="center">
 <img width="200" src="/static/gephi_force_atlas.png" alt="Search for Java books zoomed out"><br>
-_Give the Force Atlas layout a go, above are some settings to get started with._
+Give the Force Atlas layout a go, above are some settings to get started with.<br><br>
 </div>
 
 ## Build your query and run
