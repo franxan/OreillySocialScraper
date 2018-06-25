@@ -89,7 +89,7 @@ class AuthorProbe:
 def init(hostname, port, query, max_pages=False, delay=0):
     a = AuthorProbe(query=query, max_pages=max_pages, delay=delay)
 
-    # generate chart
+    # Generate chart
     stream = ChartStreamer(hostname=hostname,
                            port=port,
                            workspace="workspace1")
