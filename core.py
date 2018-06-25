@@ -1,11 +1,17 @@
 import requests
 import re
 from bs4 import BeautifulSoup
+from time import sleep
 from utils.liveStreamer import ChartStreamer
 
 
 class AuthorProbe:
-    def __init__(self, query, results_per_page=15, page=1, max_pages=False):
+    def __init__(self,
+                 query,
+                 results_per_page=15,
+                 page=1,
+                 max_pages=False,
+                 delay=0):
         self.url_template = (
             'https://ssearch.oreilly.com/?'
             'i=1;'
@@ -21,6 +27,7 @@ class AuthorProbe:
         self.page = page
         self.results_per_page = results_per_page
         self.max_pages = max_pages
+        self.delay = delay
         self.authors = {}
 
         # Fetch initial data
@@ -48,6 +55,9 @@ class AuthorProbe:
 
     def get_all(self):
         for page in range(self.page, self.total_pages):
+            if self.delay > 0:
+                print('Waiting', self.delay, 'seconds...')
+                sleep(self.delay)
             print('Processing page', self.page, '...')
             self.get_authors()
 
@@ -76,8 +86,8 @@ class AuthorProbe:
                 self.authors[author]['friends'].append(friend)
 
 
-def init(hostname, port, query, max_pages=False):
-    a = AuthorProbe(query=query, max_pages=max_pages)
+def init(hostname, port, query, max_pages=False, delay=0):
+    a = AuthorProbe(query=query, max_pages=max_pages, delay=delay)
 
     # generate chart
     stream = ChartStreamer(hostname=hostname,

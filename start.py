@@ -28,6 +28,12 @@ def main():
                         default=0,
                         required=False)
 
+    parser.add_argument('-d', 
+                        '--delay', 
+                        type=int, 
+                        default=0,
+                        required=False)
+
     args = parser.parse_args()
 
     # We can't set a boolean default for type int argument
@@ -38,7 +44,8 @@ def main():
     init(hostname=args.server,
          port=args.port,
          query=args.query,
-         max_pages=max_pages)
+         max_pages=max_pages,
+         delay=args.delay)
 
 
 if __name__ == '__main__':
