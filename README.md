@@ -58,7 +58,7 @@ Give the Force Atlas layout a go, above are some settings to get started with.<b
 ### Example
 To search all Python books with a delay of 5 seconds per page:
 ```
-python start.py -q "python"
+python start.py -d 5 -q "python"
 ```
 #### Notes
 1. This is assuming you're running Gephi on localhost:8080. If not you will need to specify the IP and port of your server. See `python start.py -h` for more information on CLI flags.
