@@ -29,6 +29,7 @@ git clone https://github.com/michaelfindlater/OreillySocialScraper.git
 cd OreillySocialScraper/
 virtualenv -p `which python3` virtual_environment/
 . virtual_environment/bin/activate
+pip install -r requirements.text
 ```
 ## Set up Gephi
 1. [Install](https://gephi.org/)
