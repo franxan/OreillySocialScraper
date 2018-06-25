@@ -13,6 +13,7 @@ A search for Java books zoomed out<br><br>
 A search for Java books zoomed in on a specific node<br><br>
 
 </div>
+
 ## Introduction
 This is a quick weekend/semi-ongoing experiment. Feel free to contribute.<br>
 #### TODO
