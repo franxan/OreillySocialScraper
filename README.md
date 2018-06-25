@@ -12,7 +12,7 @@ A search for Java books zoomed out<br><br>
 <img width="400" src="/static/java_close.png" alt="Search for Java books zoomed in on a specific node"><br>
 A search for Java books zoomed in on a specific node<br><br>
 
-<img width="400" src="/static/animation.gif" alt="Animation of nodes being added"><br>
+<img src="/static/animation.gif" alt="Animation of nodes being added"><br>
 Nodes being added in real time via the streaming service.<br><br>
 
 </div>
