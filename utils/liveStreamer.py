@@ -5,15 +5,13 @@ import random as rn
 
 class ChartStreamer:
     def __init__(self, hostname, port, workspace):
-
         self.stream = streamer.Streamer(
             streamer.GephiWS(hostname="192.168.10.108",
                              port=8080,
                              workspace="workspace1"))
-
-        self.szfak = 200  # this scales up everything
+        self.node_size = 200  # this scales up everything
         self.size_increment = 50
-        self.cdfak = 3000
+        self.r_seed = 3000
 
         self.nodedict = {}
 
@@ -22,9 +20,9 @@ class ChartStreamer:
             nnode = self.nodedict[fname]
         else:
             nnode = graph.Node(fname,
-                               size=self.szfak,
-                               x=self.cdfak*rn.random(),
-                               y=self.cdfak*rn.random(),
+                               size=self.node_size,
+                               x=self.r_seed*rn.random(),
+                               y=self.r_seed*rn.random(),
                                color="#8080ff",
                                type="f")
             self.nodedict[fname] = nnode  # new node into the dictionary
@@ -32,11 +30,11 @@ class ChartStreamer:
 
     def addnodes(self, pname, fnodenamelist):
         pnode = graph.Node(pname,
-                           size=self.szfak + (
+                           size=self.node_size + (
                                len(fnodenamelist) * self.size_increment
                            ),
-                           x=self.cdfak*rn.random(),
-                           y=self.cdfak*rn.random(),
+                           x=self.r_seed*rn.random(),
+                           y=self.r_seed*rn.random(),
                            color="#ff8080",
                            type="p")
         self.stream.add_node(pnode)
