@@ -1,18 +1,19 @@
-from bs4 import BeautifulSoup
 import requests
 import re
-import pandas as pd
-import pdb
-import networkx as nx
-from networkx.readwrite.gexf import write_gexf
-import pdb
-
+from bs4 import BeautifulSoup
 from liveStreamer import ChartStreamer
 
 
 class AuthorProbe:
     def __init__(self, query, results_per_page=15, page=1, max_pages=False):
-        self.url_template = 'https://ssearch.oreilly.com/?i=1;page={0};q={1};q1=Books;x1=t1'
+        self.url_template = (
+            'https://ssearch.oreilly.com/?'
+            'i=1;'
+            'page={0};'
+            'q={1};'
+            'q1=Books;'
+            'x1=t1'
+        )
         self.data_url = self.url_template.format(page, query)
         self.query = query
         self.session = requests.Session()
@@ -33,9 +34,12 @@ class AuthorProbe:
 
     def get_total_results(self):
         results_regex = re.compile('of (.*?)\n')
-        self.total_results = int(re.findall(results_regex, 
-                                       self.soup.select('h1.bread_crumb')[0].text)[0])
-        self.total_pages = int(round(self.total_results / self.results_per_page))
+        self.total_results = int(re.findall(
+            results_regex,
+            self.soup.select('h1.bread_crumb')[0].text)[0])
+        self.total_pages = int(
+            round(self.total_results / self.results_per_page)
+        )
 
     def increment_page(self):
         self.page += 1
@@ -72,19 +76,19 @@ class AuthorProbe:
 
 
 def main():
-    people = {}
     a = AuthorProbe(query='python')
 
     print(a.authors)
 
     # generate chart
-    stream = ChartStreamer(hostname="192.168.10.108", 
-                           port=8080, 
+    stream = ChartStreamer(hostname="192.168.10.108",
+                           port=8080,
                            workspace="workspace1")
 
     for author, value in a.authors.items():
         print('Adding nodes for', author, 'to stream...')
         stream.addnodes(author, value['friends'])
+
 
 if __name__ == '__main__':
     main()
