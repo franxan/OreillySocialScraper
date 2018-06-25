@@ -1,7 +1,7 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-from liveStreamer import ChartStreamer
+from utils.liveStreamer import ChartStreamer
 
 
 class AuthorProbe:
@@ -40,6 +40,7 @@ class AuthorProbe:
         self.total_pages = int(
             round(self.total_results / self.results_per_page)
         )
+        print('Total pages:', self.total_pages)
 
     def increment_page(self):
         self.page += 1
@@ -75,10 +76,8 @@ class AuthorProbe:
                 self.authors[author]['friends'].append(friend)
 
 
-def main():
-    a = AuthorProbe(query='python')
-
-    print(a.authors)
+def init(hostname, port, query, max_pages=False):
+    a = AuthorProbe(query='C++')
 
     # generate chart
     stream = ChartStreamer(hostname="192.168.10.108",
@@ -88,7 +87,3 @@ def main():
     for author, value in a.authors.items():
         print('Adding nodes for', author, 'to stream...')
         stream.addnodes(author, value['friends'])
-
-
-if __name__ == '__main__':
-    main()

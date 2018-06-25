@@ -41,7 +41,6 @@ class ChartStreamer:
                            type="p")
         self.stream.add_node(pnode)
         for fname in fnodenamelist:
-            print(pname+"-"+fname)
             fnode = self.addfnode(fname)
             self.stream.add_node(fnode)
             pfedge = graph.Edge(pnode, fnode, weight=rn.random())
