@@ -22,11 +22,11 @@ More unit tests, more features, such as also sending node book data to Gephi.
 ## Initial Set Up
 1. Clone this repository
 ```
-git clone https://github.com/michaelfindlater/oreillySocial.git
+git clone https://github.com/michaelfindlater/OreillySocialScraper.git
 ```
 2. Create Python 3 virtual environemnt and install requirements
 ```
-cd oreillySocial/
+cd OreillySocialScraper/
 virtualenv -p `which python3` virtual_environment/
 . virtual_environment/bin/activate
 ```
