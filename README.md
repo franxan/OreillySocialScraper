@@ -5,12 +5,13 @@ Discover social circles and collaborations/influence among O'Reilly tech book au
 </div>
 
 ## What to Expect
-<img width="600" src="/static/java_outer.png" alt="Search for Java books zoomed out"><br>
+<div align="center">
+<img width="400" src="/static/java_outer.png" alt="Search for Java books zoomed out"><br>
 _A search for Java books zoomed out_
 
-<img width="600" src="/static/java_close.png" alt="Search for Java books zoomed in on a specific node"><br>
+<img width="400" src="/static/java_close.png" alt="Search for Java books zoomed in on a specific node"><br>
 _A search for Java books zoomed in on a specific node_
-
+</div>
 ## Introduction
 This is a quick weekend/semi-ongoing experiment. Feel free to contribute.<br>
 #### TODO
@@ -31,9 +32,10 @@ virtualenv -p `which python3` virtual_environment/
 1. [Install](https://gephi.org/)
 2. Update and enable the "Graph Streaming" module
 3. Create a new workspace and start the server from the "Streaming" tab<br>
-
-<img width="600" src="/static/gephi_server.png" alt="Search for Java books zoomed out"><br>
+<div align="center">
+<img width="200" src="/static/gephi_server.png" alt="Search for Java books zoomed out"><br>
 _Start the server, make sure you know your IP address and the configured port if not running locally._
+</div>
 
 #### Hint
 _Right click on "Master Server" and click start, the circular icon needs to be green._
@@ -41,8 +43,10 @@ _Right click on "Master Server" and click start, the circular icon needs to be g
 ## Recommended Settings for Gephi
 ### Layout
 Force Atlas
-<img width="600" src="/static/gephi_force_atlas.png" alt="Search for Java books zoomed out"><br>
+<div align="center">
+<img width="200" src="/static/gephi_force_atlas.png" alt="Search for Java books zoomed out"><br>
 _Give the Force Atlas layout a go, above are some settings to get started with._
+</div>
 
 ## Build your query and run
 ### Example
