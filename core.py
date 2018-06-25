@@ -77,11 +77,11 @@ class AuthorProbe:
 
 
 def init(hostname, port, query, max_pages=False):
-    a = AuthorProbe(query='C++')
+    a = AuthorProbe(query=query, max_pages=max_pages)
 
     # generate chart
-    stream = ChartStreamer(hostname="192.168.10.108",
-                           port=8080,
+    stream = ChartStreamer(hostname=hostname,
+                           port=port,
                            workspace="workspace1")
 
     for author, value in a.authors.items():
